@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+
+    <h2> Welcome! This is the WACC Calculator! </h2>
+
+</head>
+<body>
+
+<p> Instruction: Enter all the relevant accounting information below, then hit "Give me WACC!" Enter only positive numbers.</p>
+    <form action="calculate_wacc">
+
+    <ul>
+        <li> Income Before Tax: <input type="text" name="ibt"></li>
+        <li> Income Tax Expenses: <input type="text" name="itx"> </li>
+        <li> Interest Expenses: <input type="text" name="ie"> </li>
+        <li> Short/Current LT Debt: <input type="text" name="scltd"> </li>
+        <li> LT Debt: <input type="text" name="ltd"> </li>
+        <li> Risk-free Rate: <input type="text" name="rf"> </li>
+        <li> Company Beta: <input type="text" name="cb"> </li>
+        <li> Market Return: <input type="text" name="mr"> </li>
+        <li> Total Debt: <input type="text" name="td"> </li>
+        <li> Market Cap: <input type="text" name="mc"> </li>
+    </ul>
+    <button type="submit">Give me WACC!</button>
+    </form>
+{% endblock %}
+
+</body>
+</html>
