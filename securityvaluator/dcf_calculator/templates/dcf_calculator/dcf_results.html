@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> These are your results: </h2>
+
+<ul>
+    Revenue Projections:
+
+    {% for rev_projection in revenue_projections %}
+
+    <li> {{ rev_projection }} </li>
+    {% endfor %}
+    <br>
+    Net Income Projections:
+
+    {% for net_income in net_income_projections %}
+
+    <li> {{ net_income }}</li>
+    {% endfor %}
+    <br>
+
+    FCF Projections:
+
+    {% for fcf in fcf_projections %}
+
+    <li> {{ fcf }}</li>
+    {% endfor %}
+    <br>
+
+    Your fair value of equity is: {{ fair_equity_value }}
+
+</ul>
+
+
+{% endblock %}

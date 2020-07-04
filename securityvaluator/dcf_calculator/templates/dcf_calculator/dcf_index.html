@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+This is the DCF Calculator. Enter the relevant accounting details below.
+
+<form action="make_dcf_calculation">
+    <!-- ly: last year, sly: second last year -->
+    <ul>
+        <strong> Cash Flow Statement </strong>
+        <li> Total Cash Flow from Operating Activities <input type="text" placeholder= "2018" name="tcfoa_sly"> <input type="text" placeholder= "2019" name="tcfoa_ly"></li>
+        <li> Capital Expenditures: <input type="text" placeholder= "2018" name="ce_sly"> <input type="text" placeholder= "2019" name="ce_ly"> </li>
+
+        <br>
+
+        <strong> Income Statement </strong>
+        <li> Revenue: <input type="text" placeholder="2018" name="rev_sly"> <input type="text" placeholder="2019" name="rev_ly"> </li>
+        <li> Interest expenses: <input type="text" placeholder="2018" name="ie_sly"> <input type="text" placeholder="2019" name="ie_ly"> </li>
+        <li> Income Before Tax: <input type="text" placeholder="2018" name="ibt_sly"> <input type="text" placeholder="2019" name="ibt_ly"> </li>
+        <li> Income Tax Expenses: <input type="text" placeholder="2018" name="ite_sly"> <input type="text" placeholder="2019" name="ite_ly"> </li>
+        <li> Net Income: <input type="text" placeholder="2018" name="ni_sly"> <input type="text" placeholder="2019" name="ni_ly"> </li>
+
+        <br>
+
+        <strong> Other information </strong>
+        <li> WACC: <input type="text" name="wacc"> </li>
+        <li> Perpetual Growth Rate <input type="text" placeholder="2.5%" name="pgr"></li>
+        <li> Shares Outstanding: <input type="text" name="so"></li>
+    </ul>
+    <button type="submit">Calculate!</button>
+    </form>
+
+{% endblock %}
