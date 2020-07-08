@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <h2> These are the WACC Calculation Results.</h2>
-</head>
+{% extends 'base.html' %}
+
 <body>
 {% block content %}
-
+    <h2> These are the WACC Calculation Results.</h2><br>
     <ul>
         <li> Tax Rate : {{ tax_rate }}</li>
         <li> Cost of Debt : {{ cost_of_debt }}</li>
@@ -19,6 +16,3 @@ Next step: Copy and Paste the WACC Value and return to <a href="{% url 'mainpage
 
 {% endblock %}
 
-
-</body>
-</html>

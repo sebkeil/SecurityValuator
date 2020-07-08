@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .forms import EnterpriseModelForm
 
+from .models import Enterprise
 # Create your views here.
 
 def dcf_index(request):
@@ -90,4 +92,12 @@ def make_dcf_calculations(request):
     return render(request, 'dcf_calculator/dcf_results.html', context)
 
 
-
+def create_enterprise_view(request):
+    form = EnterpriseModelForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = EnterpriseModelForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'dcf_calculator/create_enterprise.html', context)
