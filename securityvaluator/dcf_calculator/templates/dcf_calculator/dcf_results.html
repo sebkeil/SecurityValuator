@@ -1,34 +1,44 @@
+<style>
+    .intro-text {
+        color: green;
+        font-size: 20px;
+        font-style: Georgia;
+    }
+</style>
+
 {% extends 'base.html' %}
 
 {% block content %}
 
-<h2> These are your results: </h2>
+<p class="intro-text"> These are your results for the company <strong> {{ company_name }} </strong>. <br>
+    Ticker Symbol: {{ stock_ticker }}
+
+</p>
 
 <ul>
-    Revenue Projections:
+    <strong>Revenue Projections:</strong><br>
 
-    {% for rev_projection in revenue_projections %}
+    {% for year, projection in revenue_dict.items %}
 
-    <li> {{ rev_projection }} </li>
-    {% endfor %}
-    <br>
-    Net Income Projections:
+    <li> {{ year }} : <strong>{{ projection }}</strong> </li>
+    {% endfor %} <br> <br>
 
-    {% for net_income in net_income_projections %}
+    <strong>Net Income Projections:</strong><br>
 
-    <li> {{ net_income }}</li>
-    {% endfor %}
-    <br>
+    {% for year, projection in net_income_dict.items %}
 
-    FCF Projections:
+    <li> {{ year }} : <strong>{{ projection }}</strong></li>
+    {% endfor %} <br> <br>
 
-    {% for fcf in fcf_projections %}
+    <strong>FCF Projections:</strong><br>
 
-    <li> {{ fcf }}</li>
-    {% endfor %}
-    <br>
+    {% for year, projection in fcf_dict.items %}
 
-    Your fair value of equity is: {{ fair_equity_value }}
+    <li> {{ year }} : <strong>{{ projection }}</strong> </li>
+    {% endfor %} <br> <br>
+
+
+    Your fair value of equity is: <strong> {{ fair_equity_value }} </strong>
 
 </ul>
 

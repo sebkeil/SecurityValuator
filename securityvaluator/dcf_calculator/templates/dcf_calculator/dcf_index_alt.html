@@ -1,12 +1,18 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
 
-This is the DCF Calculator. Enter the information below.
-<br><br>
+This is the DCF Calculator. Enter the information below. <br><br>
 
-<form action="make_dcf_calculation">
+<form action="make_dcf_calculation_alt" method="POST"> {% csrf_token %}
     <!-- ly: last year, sly: second last year -->
+
+    <input type="text" name="company_name" placeholder="Company Name" >
+    <input type="text" name="stock_ticker" placeholder="Ticker Symbol">
+    <input type="text" name="sector" placeholder="Sector">
+        <br><br>
+
     <ul>
         <strong> Cash Flow Statement </strong>
         <li> Total Cash Flow from Operating Activities <input type="text" placeholder= "2018" name="tcfoa_sly"> <input type="text" placeholder= "2019" name="tcfoa_ly"></li>
