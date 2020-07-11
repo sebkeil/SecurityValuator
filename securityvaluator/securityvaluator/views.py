@@ -3,6 +3,6 @@ from django.shortcuts import render
 
 # define homepage views here
 
-def mainpage(request):
+def mainpage_view(request):
     return render(request, 'mainpage.html', {})
 

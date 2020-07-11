@@ -4,10 +4,10 @@ from .models import TaxRateEstimation
 
 # Create your views here.
 
-def index(request):
-    return render(request,'wacc_calculator/index.html', {"name": "Keil"})
+def wacc_index_view(request):
+    return render(request,'wacc_calculator/wacc_index.html', context={})
 
-def calculate_wacc(request):
+def wacc_results_view(request):
     income_before_tax = int(request.GET['ibt'])
     income_tax_expenses = int(request.GET['itx'])
     interest_expenses = int(request.GET['ie'])
@@ -35,5 +35,5 @@ def calculate_wacc(request):
                'wacc_value': wacc_value
                }
 
-    return render(request, 'wacc_calculator/results.html', context=context)
+    return render(request, 'wacc_calculator/wacc_results.html', context=context)
 

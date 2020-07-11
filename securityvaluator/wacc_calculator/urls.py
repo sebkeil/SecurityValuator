@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('calculate_wacc', views.calculate_wacc, name='calculate_wacc')
+    path('', views.wacc_index_view, name='wacc_index'),
+    path('wacc_results', views.wacc_results_view, name='wacc_results')
 ]
 

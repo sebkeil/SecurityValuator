@@ -19,7 +19,7 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('', views.mainpage, name='mainpage'),
+    path('', views.mainpage_view, name='mainpage'),
     path('admin/', admin.site.urls),
     path('wacc_calculator/', include('wacc_calculator.urls')),
     path('help_text/', include('help_text.urls')),
