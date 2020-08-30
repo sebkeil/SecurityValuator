@@ -5,7 +5,7 @@ from .models import HelpTutorial
 # Create your views here.
 
 def main_help(request):
-    obj = HelpTutorial.objects.get(id=1)
+    tutorials = HelpTutorial.objects.all()
     """
     context = {
         'title': obj.title,
@@ -13,6 +13,6 @@ def main_help(request):
         'publishing_date': obj.publishing_date
     }"""
     context = {
-        'object': obj,
+        'tutorials': tutorials,
     }
     return render(request, 'help_text/main_help.html', context)

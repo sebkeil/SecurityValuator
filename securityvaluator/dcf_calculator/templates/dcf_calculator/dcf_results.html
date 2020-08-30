@@ -13,32 +13,36 @@
 <p class="intro-text"> These are your results for the company <strong> {{ company_name }} </strong>. <br>
     Ticker Symbol: {{ stock_ticker }}
 
-</p>
+</p><hr>
 
 <ul>
     <strong>Revenue Projections:</strong><br>
 
     {% for year, projection in revenue_dict.items %}
 
-    <li> {{ year }} : <strong>{{ projection }}</strong> </li>
-    {% endfor %} <br> <br>
+    <li> {{ year }} : <strong>{{ projection }}</strong> {{ currency }} </li>
+    {% endfor %} <br>
+
+    <strong><hr></strong>
 
     <strong>Net Income Projections:</strong><br>
 
     {% for year, projection in net_income_dict.items %}
 
-    <li> {{ year }} : <strong>{{ projection }}</strong></li>
-    {% endfor %} <br> <br>
+    <li> {{ year }} : <strong>{{ projection }}</strong> {{ currency }} </li>
+    {% endfor %} <br>
+    <hr>
 
     <strong>FCF Projections:</strong><br>
 
     {% for year, projection in fcf_dict.items %}
 
-    <li> {{ year }} : <strong>{{ projection }}</strong> </li>
+    <li> {{ year }} : <strong>{{ projection }}</strong> {{ currency }} </li>
     {% endfor %} <br> <br>
 
+    <hr>
 
-    Your fair value of equity is: <strong> {{ fair_equity_value }} </strong>
+    Your fair value of equity is: <strong> {{ fair_equity_value }} </strong> {{ currency }}
 
 </ul>
 

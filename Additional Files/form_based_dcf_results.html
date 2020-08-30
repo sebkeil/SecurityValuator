@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--  dcf_calculator/templates/dcf_calculator/'form_based_dcf_results.html'-->
+
+
+{{ object.company_name }}
+
+{% for projection in object.projected_revenues %}
+
+<li> {{ projection }} </li>
+
+{% endfor %}
+
+{% endblock %}
+

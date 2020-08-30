@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('wacc_calculator/', include('wacc_calculator.urls')),
     path('help_text/', include('help_text.urls')),
-    path('dcf_calculator/', include('dcf_calculator.urls'))
+    path('dcf_calculator/', include('dcf_calculator.urls')),
+    path('blog/', include('blog.urls')),
+    path('yahoo_spider/', include('yahoo_spider.urls'))
 ]
 

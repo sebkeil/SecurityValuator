@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p> Here you can find all the stocks that have been generated with this tool. Feel free to explore! </p>
+
+{% for object in object_list %}
+
+<ul>
+
+    <li> <a href="{{ object.get_absolute_url }}"> {{ object.company_name }}</a> {{object.id }}</li>
+
+</ul>
+
+{% endfor %}
+
+{% endblock %}

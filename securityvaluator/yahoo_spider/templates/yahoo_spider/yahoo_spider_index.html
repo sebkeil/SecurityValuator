@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+Type in the stock ticker symbol of your company (e.g. 'AAPL' for Apple) and click "Get Balance Sheet".
+
+<hr>
+
+<form action="yahoo_spider_balance_sheet" method="POST"> {% csrf_token %}
+
+    <input type="text" name="stock_ticker" placeholder="Ticker Symbol">
+    <br><br>
+    <button type="submit" style="background:green">Get Balance Sheet!</button>
+
+</form>
+
+{% endblock %}

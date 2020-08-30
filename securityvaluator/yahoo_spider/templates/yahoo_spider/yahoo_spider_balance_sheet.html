@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> Balance Sheet -- {{ ticker_symbol }} </h2>
+
+<hr>
+
+{{ balance_sheet_df | safe }}
+
+{% endblock %}

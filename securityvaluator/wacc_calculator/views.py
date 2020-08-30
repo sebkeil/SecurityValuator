@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import TaxRateEstimation
-
+from .models import EnterpriseWACC
 # Create your views here.
 
 def wacc_index_view(request):
@@ -34,6 +32,24 @@ def wacc_results_view(request):
                'equity_weight': equity_weight,
                'wacc_value': wacc_value
                }
+
+    EnterpriseWACC.objects.create(income_before_tax=income_before_tax,
+                                  income_tax_expenses=income_tax_expenses,
+                                  interest_expenses=interest_expenses,
+                                  short_current_lt_debt=short_current_lt_debt,
+                                  lt_debt=lt_debt,
+                                  rf_rate=rf_rate,
+                                  beta=beta,
+                                  market_return=market_return,
+                                  total_debt=total_debt,
+                                  market_cap=market_cap,
+                                  tax_rate=tax_rate,
+                                  cost_of_debt=cost_of_debt,
+                                  capm=capm,
+                                  debt_weight=debt_weight,
+                                  equity_weight=equity_weight,
+                                  wacc_value=wacc_value
+                                  )
 
     return render(request, 'wacc_calculator/wacc_results.html', context=context)
 

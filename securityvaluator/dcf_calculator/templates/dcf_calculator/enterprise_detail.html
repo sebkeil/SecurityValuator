@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3> {{ object.company_name }}</h3>
+{{ object.sector }}<hr>
+<p>
+    WACC: <strong> {{ object.wacc }}</strong><br><hr>
+    Fair Value of Equity:  <strong>{{ object.fair_equity_value }}</strong>
+</p>
+</ul>
+
+{% endblock %}

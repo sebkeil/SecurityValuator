@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'wacc_calculator.apps.WaccCalculatorConfig',
     'help_text',
     'dcf_calculator',
+    'blog',
+    'yahoo_spider',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -13,7 +13,7 @@
 <body>
 
 <p> Instruction: Enter all the relevant accounting information below, then hit "Give me WACC!" Enter only positive numbers.</p>
-    <form action="calculate_wacc">
+    <form action="wacc_results" method="GET"> {% csrf_token %}
 
     <ul>
         <li> Income Before Tax: <input type="text" name="ibt"></li>

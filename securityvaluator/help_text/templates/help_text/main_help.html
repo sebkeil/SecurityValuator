@@ -3,11 +3,14 @@
 {% block content %}
 <head>
     Welcome to the Documentation. Here you can find all the relevant information on how to find your account information. 
-</head>
+</head> <br> <br>
 
-<br>
-{% if object.title %} {{ object.title }} {% else %} Coming soon buddy... {% endif %}
-<br>
-{% if object.main_text %} {{ object.main_text }} {% else %} Wait up a bit. {% endif %}
+<p> These are all available Tutorials: </p>
+
+{% for tutorial in tutorials %}
+
+<li> {{ tutorial.title }} </li>
+
+{% endfor %}
 
 {% endblock %}
